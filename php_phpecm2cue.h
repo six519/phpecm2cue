@@ -7,5 +7,4 @@ PHP_FUNCTION(phpecm2cue_process);
 
 extern zend_module_entry phpecm2cue_module_entry;
 #define phpext_phpecm2cue_ptr &phpecm2cue_module_entry
-
 #endif
