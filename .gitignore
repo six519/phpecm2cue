@@ -27,3 +27,4 @@ run-tests.php
 modules/
 phpecm2cue.la
 phpecm2cue.lo
+.DS_Store

@@ -3,6 +3,8 @@
 #endif
 #include "php.h"
 #include "php_phpecm2cue.h"
+#include <stdio.h>
+#include "unecm.h"
 
 static zend_function_entry phpecm2cue_functions[] = {
     PHP_FE(phpecm2cue_process, NULL)
