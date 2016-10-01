@@ -23,3 +23,7 @@ missing
 mkinstalldirs
 phpecm2cue.loT
 run-tests.php
+.libs/
+modules/
+phpecm2cue.la
+phpecm2cue.lo
