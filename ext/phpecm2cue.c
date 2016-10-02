@@ -283,13 +283,13 @@ PHP_FUNCTION(phpecm2cue_process)
     retValue = malloc(strlen(infilename) - 3);
     if(strlen(infilename) < 5) {
       strcpy(retValue, "filename is too short");
-      //RETURN_STRING(retValue, 1);
-      RETURN_STRING(retValue);
+      RETURN_STRING(retValue, 1);
+
     }
     if(strcasecmp(infilename + strlen(infilename) - 4, ".ecm")) {
       strcpy(retValue, "filename must end in .ecm");
-      //RETURN_STRING(retValue, 1);
-      RETURN_STRING(retValue);
+      RETURN_STRING(retValue, 1);
+
     }
 
     outfilename = malloc(strlen(infilename) - 3);
@@ -303,15 +303,15 @@ PHP_FUNCTION(phpecm2cue_process)
     fin = fopen(infilename, "rb");
     if(!fin) {
       strcpy(retValue, "Cannot open file");
-      //RETURN_STRING(retValue, 1);
-      RETURN_STRING(retValue);
+      RETURN_STRING(retValue, 1);
+
     }
     fout = fopen(outfilename, "wb");
     if(!fout) {
       strcpy(retValue, "Cannot write file");
       fclose(fin);
-      //RETURN_STRING(retValue, 1);
-      RETURN_STRING(retValue);
+      RETURN_STRING(retValue, 1);
+
     }
 
     unecm_ret = unecmify(fin, fout);
@@ -321,16 +321,16 @@ PHP_FUNCTION(phpecm2cue_process)
 
     if(unecm_ret != 0) {
       strcpy(retValue, "Cannot decode file");
-      //RETURN_STRING(retValue, 1);
-      RETURN_STRING(retValue);
+      RETURN_STRING(retValue, 1);
+
     }
 
     strcpy(oldfilename, outfilename);
     cue_file = fopen(strcat(outfilename, ".cue"), "w");
     if(!cue_file) {
       strcpy(retValue, "Cannot write cue file");
-      //RETURN_STRING(retValue, 1);
-      RETURN_STRING(retValue);
+      RETURN_STRING(retValue, 1);
+
     }
     fprintf(cue_file, "FILE \"%s\" BINARY\n", oldfilename);
     fprintf(cue_file, "\tTRACK 01 MODE1/2352\n");
@@ -338,6 +338,5 @@ PHP_FUNCTION(phpecm2cue_process)
     fclose(cue_file);
 
     strcpy(retValue, outfilename);
-    //RETURN_STRING(retValue, 1);
-    RETURN_STRING(retValue);
+    //RETURN_STRING(retValue, 1)
 }

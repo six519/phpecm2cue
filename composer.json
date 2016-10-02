@@ -2,7 +2,7 @@
     "name": "six519/phpecm2cue",
     "description": "PHP C Extension To Decode ECM File And Generate Cue File",
     "require": {
-        "php": ">=7.0.0"
+        "php": ">=5.6.0"
     },
     "extra": {
         "branch-alias": {
