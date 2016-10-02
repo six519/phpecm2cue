@@ -7,6 +7,8 @@ Building
 =========
 ::
 
+    composer require six519/phpecm2cue:dev-master
+    cd vendor/six519/phpecm2cue/ext/
     phpize
     ./configure --enable-phpecm2cue
     make
