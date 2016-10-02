@@ -3,5 +3,10 @@
     "description": "PHP C Extension To Decode ECM File And Generate Cue File",
     "require": {
         "php": ">=5.2.7"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.0"
+        }
     }
 }
