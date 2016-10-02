@@ -338,5 +338,5 @@ PHP_FUNCTION(phpecm2cue_process)
     fclose(cue_file);
 
     strcpy(retValue, outfilename);
-    //RETURN_STRING(retValue, 1)
+    RETURN_STRING(retValue, 1);
 }
